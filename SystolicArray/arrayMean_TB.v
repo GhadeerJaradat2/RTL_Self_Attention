@@ -28,7 +28,7 @@ arrayMean dut_mean( enable,
 					result2_INT_20,result2_INT_21 ,result2_INT_22 ,result2_INT_23,
 					result2_INT_30,result2_INT_31 ,result2_INT_32 ,result2_INT_33,
 					clk,_reset,
-					headPrune					 
+					PruneHead					 
 				   );
 integer fd1,fd2,fd3,fd4,fd5,temp1,temp2,temp3,temp4,temp5,i,j,fd_out1,fd_out2,flag=0;
 reg signed [`width-1:0]  Matrix2[0:3][0:3];
