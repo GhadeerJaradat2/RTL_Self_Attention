@@ -105,22 +105,23 @@ module Adder #(parameter width=8)(
 			end
 			else
 			begin
-				TotalRes_00<=0;
-				TotalRes_01<=0;
-				TotalRes_02<=0;
-				TotalRes_03<=0;
-				TotalRes_10<=0;
-				TotalRes_11<=0;
-				TotalRes_12<=0;
-				TotalRes_13<=0;
-				TotalRes_20<=0;
-				TotalRes_21<=0;
-				TotalRes_22<=0;
-				TotalRes_23<=0;
-				TotalRes_30<=0;
-				TotalRes_31<=0;
-				TotalRes_32<=0;
-				TotalRes_33<=0;
+
+				TotalRes_00 <= input2_00;
+				TotalRes_01 <= input2_01;
+				TotalRes_02 <= input2_02;
+				TotalRes_03 <= input2_03;
+				TotalRes_10 <= input2_10;
+				TotalRes_11 <= input2_11;
+				TotalRes_12 <= input2_12;
+				TotalRes_13 <= input2_13;
+				TotalRes_20 <= input2_20;
+				TotalRes_21 <= input2_21;
+				TotalRes_22 <= input2_22;
+				TotalRes_23 <= input2_23;
+				TotalRes_30 <= input2_30;
+				TotalRes_31 <= input2_31;
+				TotalRes_32 <= input2_32;
+				TotalRes_33 <= input2_33;
 			end
 		end
 	
