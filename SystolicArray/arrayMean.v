@@ -18,7 +18,7 @@ module arrayMean #(parameter width=8)(
 	input signed [2*width-1:0] result2_INT_30,result2_INT_31 ,result2_INT_32 ,result2_INT_33 ,
 	input clk,_reset,
 		
-	output reg   PruneHead
+	output  PruneHead
 	);
 	
 		//define reg
@@ -35,7 +35,9 @@ module arrayMean #(parameter width=8)(
 	reg  [2*width-1:0] result2_abs_INT_30=0,result2_abs_INT_31=0 ,result2_abs_INT_32=0 ,result2_abs_INT_33=0;	
 
 	wire[7:0] threshold = 220;
-	
+	reg headPruneReset=0;
+	reg headFlag=0;
+	assign PruneHead = headPruneReset &  headFlag;
 	always@(posedge clk or negedge _reset)
 	
 	begin
@@ -43,11 +45,12 @@ module arrayMean #(parameter width=8)(
 		begin
 		
 			intermediateRes <= 0;
+			headPruneReset<=0;
 			
 		end
 		else
 		begin
-			
+			headPruneReset<=1;
 			if(enable)
 			begin
 			
@@ -109,15 +112,14 @@ always @(result1_abs_INT_00 , result1_abs_INT_01 , result1_abs_INT_02 , result1_
 						  result2_abs_INT_30 + result2_abs_INT_31 + result2_abs_INT_32 + result2_abs_INT_33 ;
 	
 	if(comapre_flag)
-		begin
-		if (intermediateRes <= threshold)
-				PruneHead = 1;
-			else
-				PruneHead = 0;
+	begin
+		if (intermediateRes[2*width-1:width] <= threshold)
+				headFlag = 1;
+		else
+				headFlag = 0;
 		
 		end
-		else
-			PruneHead = 0;
+	
 	end
 	
 endmodule
