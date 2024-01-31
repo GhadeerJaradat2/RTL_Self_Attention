@@ -18,7 +18,7 @@ module arrayMean #(parameter width=8)(
 	input signed [2*width-1:0] result2_INT_30,result2_INT_31 ,result2_INT_32 ,result2_INT_33 ,
 	input clk,_reset,
 		
-	output  PruneHead
+	output  PruneHead=0
 	);
 	
 		//define reg
