@@ -46,7 +46,7 @@ module SysArray_ADD_Mean #(parameter width=8)(
 	input comapre_flag,//indicate that int*int matrices ended, to comape with threshold
 	output reg   PruneHead
 	);
-wire enableMean;
+
 SystolicArray_ADD DUT(	AddFlag,IntFlag,clk,_reset,_flush_acc,
 						a00,a01,a02,a03,a10,a11,a12,a13,a20,a21,a22,a23,a30,a31,a32,a33,
 						b1_00,b1_10,b1_20,b1_30,b1_01,b1_11,b1_21,b1_31,b1_02,b1_12,b1_22,b1_32,b1_03,b1_13,b1_23,b1_33,
