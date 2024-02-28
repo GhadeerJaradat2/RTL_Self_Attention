@@ -49,7 +49,7 @@ module ArrangeArray #(parameter width=8, FRACTIONAL_BITS=8)(
 	output reg signed [2*width-1:0] result2_8,result2_9,result2_10,result2_11,
 	output reg signed [2*width-1:0] result2_12,result2_13,result2_14,result2_15, 
 	
-	output reg [511:0] Mask0,Mask1,
+	output reg [511:0] Mask0,Mask1,// for every row
 	
 	output reg pruneHead,
 	output  done
