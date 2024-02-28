@@ -2,9 +2,9 @@ module ArrangeArray #(parameter width=8, FRACTIONAL_BITS=8)(
 	input clk,_resetPE,_resetRow,_resetHead,
 	input [7:0] enables,
 	input addFlag,// flag to indicate if an adition is placed or not
-	input lastTileFlag,
-	input endOfRowFlag,
-	input endOfHeadFlag,
+	input lastTileFlag,//flag to indicate the one row one col input finished.
+	input endOfRowFlag,//flag to indicate one row and all cols to generate one row output
+	input endOfHeadFlag,//Finish the hole array
 	input [2*width-1:0] headThreshold,
 	input [2:0] blockPruningRatio,
 	input signed [width-1:0] a00,a01,a02,a03,
